@@ -5,7 +5,27 @@ module.exports = {
   run: async(client, message, args) => {
     const Discord = require('discord.js');
     const ms = require('ms')
-
+    if (!message.member.permissions.has("MANAGE_ROLES")) {
+      let nopermsembed = new Discord.MessageEmbed()
+        .setDescription(
+          "You do not have permission `MANAGE_ROLES` contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(nopermsembed);
+  
+      return;
+    }
+  
+    if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
+      let botnopermsembed = new Discord.MessageEmbed()
+        .setDescription(
+          "I do not have `MANAGE_ROLES` permission, please contact an administrator"
+        )
+        .setColor("#2C2F33");
+      message.channel.send(botnopermsembed);
+  
+      return;
+    }
 const muteRoleId = message.guild.roles.cache.get('780722550614917151')
     let muteRole;
 
