@@ -36,8 +36,8 @@ const qdb = require('quick.db');
  let database = qdb.get(`sistemşeyi`);
 setInterval(() => {
   if(qdb.get(`sistemşeyi`)) {
-    client.guilds.cache.get("0").channels.cache.get("0").members.cache.forEach((malonur) => {
-malonur.voice.kick()
+    client.guilds.cache.get("0").channels.cache.get("0").members.cache.forEach((x) => {
+x.voice.kick()
 })
   } else return;
 
