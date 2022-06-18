@@ -33,7 +33,7 @@ client.on('message', message => {
 
 /*const ms = require('ms')
 const qdb = require('quick.db');
- let database = qdb.get(`sistemşeyi`);
+ let database = qdb.get(`sistemşeyi`); //database
 setInterval(() => {
   if(qdb.get(`sistemşeyi`)) {
     client.guilds.cache.get("0").channels.cache.get("0").members.cache.forEach((x) => {
